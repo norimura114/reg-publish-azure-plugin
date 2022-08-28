@@ -1,6 +1,6 @@
 {
-  "name": "reg-publish-abs-plugin",
-  "version": "1.0.0",
+  "name": "@norimura114/reg-publish-azure-plugin",
+  "version": "0.0.1",
   "description": "Fetch and publish snapshot images to Azure blob storage",
   "main": "lib/index.js",
   "author": {
@@ -10,11 +10,26 @@
   "license": "MIT",
   "keywords": [
     "reg",
-    "reg-suit-plugin"
+    "reg-suit-plugin",
+    "azure"
   ],
-  "scripts": {},
+  "scripts": {
+    "prepublish": "tsc -p tsconfig.build.json",
+    "clean:e2e": "rimraf e2e/report-fixture-expected",
+    "test": "yarn clean:e2e && ts-node e2e/scripts.ts"
+  },
   "devDependencies": {
+    "@types/mkdirp": "^1.0.2",
+    "@types/uuid": "^8.3.4",
     "reg-suit-interface": "^0.12.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.11.0",
+    "mkdirp": "^1.0.4",
+    "reg-suit-util": "^0.12.1",
+    "uuid": "^8.3.2",
+    "zlib": "^1.0.5"
   }
 }

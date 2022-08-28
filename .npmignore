@@ -1,0 +1,4 @@
+yarn.lock
+lib/**/*.spec.js
+src/
+e2e/
